@@ -34,6 +34,13 @@
             this.TMR_1 = new System.Windows.Forms.Timer(this.components);
             this.TBN_StyleHtml = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TBX_StyleRGB_B = new System.Windows.Forms.TextBox();
+            this.TBX_StyleRGB_G = new System.Windows.Forms.TextBox();
             this.TBX_StyleRGB_R = new System.Windows.Forms.TextBox();
             this.TBX_StyleHtml = new System.Windows.Forms.TextBox();
             this.RBN_StyleRGB = new System.Windows.Forms.RadioButton();
@@ -46,13 +53,6 @@
             this.lbl_y = new System.Windows.Forms.Label();
             this.BTN_SelectColor = new System.Windows.Forms.Button();
             this.CRDG_1 = new System.Windows.Forms.ColorDialog();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.TBX_StyleRGB_G = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TBX_StyleRGB_B = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,6 +100,67 @@
             this.panel1.Size = new System.Drawing.Size(162, 45);
             this.panel1.TabIndex = 5;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(150, 28);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(11, 12);
+            this.label5.TabIndex = 6;
+            this.label5.Text = ")";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(114, 28);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(11, 12);
+            this.label4.TabIndex = 6;
+            this.label4.Text = ",";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(78, 28);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(11, 12);
+            this.label3.TabIndex = 6;
+            this.label3.Text = ",";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "rgb(";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(11, 12);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "#";
+            // 
+            // TBX_StyleRGB_B
+            // 
+            this.TBX_StyleRGB_B.Location = new System.Drawing.Point(125, 24);
+            this.TBX_StyleRGB_B.Name = "TBX_StyleRGB_B";
+            this.TBX_StyleRGB_B.Size = new System.Drawing.Size(25, 21);
+            this.TBX_StyleRGB_B.TabIndex = 5;
+            this.TBX_StyleRGB_B.Text = "255";
+            // 
+            // TBX_StyleRGB_G
+            // 
+            this.TBX_StyleRGB_G.Location = new System.Drawing.Point(89, 24);
+            this.TBX_StyleRGB_G.Name = "TBX_StyleRGB_G";
+            this.TBX_StyleRGB_G.Size = new System.Drawing.Size(25, 21);
+            this.TBX_StyleRGB_G.TabIndex = 5;
+            this.TBX_StyleRGB_G.Text = "255";
+            // 
             // TBX_StyleRGB_R
             // 
             this.TBX_StyleRGB_R.Location = new System.Drawing.Point(53, 24);
@@ -133,7 +194,7 @@
             this.LBL_Version.Name = "LBL_Version";
             this.LBL_Version.Size = new System.Drawing.Size(239, 16);
             this.LBL_Version.TabIndex = 6;
-            this.LBL_Version.Text = "by jankiny  v0.3.1.200507_alpha";
+            this.LBL_Version.Text = "by jankiny  v1.0.0_beta";
             this.LBL_Version.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // BTN_Copy
@@ -206,67 +267,6 @@
             // CRDG_1
             // 
             this.CRDG_1.FullOpen = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(11, 12);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "#";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "rgb(";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(78, 28);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(11, 12);
-            this.label3.TabIndex = 6;
-            this.label3.Text = ",";
-            // 
-            // TBX_StyleRGB_G
-            // 
-            this.TBX_StyleRGB_G.Location = new System.Drawing.Point(89, 24);
-            this.TBX_StyleRGB_G.Name = "TBX_StyleRGB_G";
-            this.TBX_StyleRGB_G.Size = new System.Drawing.Size(25, 21);
-            this.TBX_StyleRGB_G.TabIndex = 5;
-            this.TBX_StyleRGB_G.Text = "255";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(114, 28);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(11, 12);
-            this.label4.TabIndex = 6;
-            this.label4.Text = ",";
-            // 
-            // TBX_StyleRGB_B
-            // 
-            this.TBX_StyleRGB_B.Location = new System.Drawing.Point(125, 24);
-            this.TBX_StyleRGB_B.Name = "TBX_StyleRGB_B";
-            this.TBX_StyleRGB_B.Size = new System.Drawing.Size(25, 21);
-            this.TBX_StyleRGB_B.TabIndex = 5;
-            this.TBX_StyleRGB_B.Text = "255";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(150, 28);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(11, 12);
-            this.label5.TabIndex = 6;
-            this.label5.Text = ")";
             // 
             // Frm_Main
             // 
