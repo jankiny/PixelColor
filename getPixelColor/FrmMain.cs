@@ -17,6 +17,7 @@ namespace getPixelColor
         public FrmMain()
         {
             InitializeComponent();
+            LBL_Version.Text = $@"{Global.By}  {Global.Version}";
         }
 
         private void Form1_Load(object sender, EventArgs e)

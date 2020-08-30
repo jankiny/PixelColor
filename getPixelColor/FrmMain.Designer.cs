@@ -194,7 +194,7 @@
             this.LBL_Version.Name = "LBL_Version";
             this.LBL_Version.Size = new System.Drawing.Size(239, 16);
             this.LBL_Version.TabIndex = 6;
-            this.LBL_Version.Text = "by jankiny  v1.0.0_beta";
+            this.LBL_Version.Text = "[by xxx] [Version]";
             this.LBL_Version.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // BTN_Copy
