@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 using System.Drawing;
+using System.Runtime.InteropServices;
 
-namespace getPixelColor
+namespace getPixelColor.Utils
 {
     public static class ColorHelper
     {
@@ -32,16 +32,15 @@ namespace getPixelColor
         [DllImport("gdi32.dll")]
         private static extern int GetPixel(IntPtr hdc, Point p);
 
-        public static bool PixelColor(int ms_x, int ms_y, out int r, out int g, out int b)
+        public static bool PixelColor(Point point, out Color color)
         {
-            Point p = new Point(ms_x, ms_y);//取置顶点坐标 
             IntPtr hdc = GetDC(new IntPtr(0));//取到设备场景(0就是全屏的设备场景) 
-            int c = GetPixel(hdc, p);//取指定点颜色 
+            int c = GetPixel(hdc, point);//取指定点颜色 
             ReleaseDC(IntPtr.Zero, hdc);
-
-            r = (c & 0xFF);//转换R 
-            g = (c & 0xFF00) / 256;//转换G 
-            b = (c & 0xFF0000) / 65536;//转换B 
+            color = Color.FromArgb(
+                c & 0xFF,                   //转换R 
+                (c & 0xFF00) / 256,       //转换G 
+                (c & 0xFF0000) / 65536);   //转换B 
             return true;
         }
 

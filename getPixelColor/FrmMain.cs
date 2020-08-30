@@ -1,84 +1,80 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using getPixelColor.Utils;
 
 namespace getPixelColor
 {
     public partial class FrmMain : Form
     {
-
-        int r, g, b;
+        private Color _color;
         public FrmMain()
         {
             InitializeComponent();
-            LBL_Version.Text = $@"{Global.By}  {Global.Version}";
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            CKB_Top.Checked = true;
+            LBL_Version.Text = $@"{Global.By}  {Global.Version}";
             TMR_Refresh.Enabled = true;
-        }
-
-        private void CKB_Top_Click(object sender, EventArgs e)
-        {
-
-            this.TopMost = CKB_Top.Checked;
         }
 
         private void BTN_Copy_Click(object sender, EventArgs e)
         {
             if (TBN_StyleHtml.Checked)
             {
-                Clipboard.SetDataObject($"#{this.TBX_StyleHtml.Text}", true);
+                Clipboard.SetDataObject($"#{TBX_StyleHtml.Text}", true);
                 return;
             }
             else if (RBN_StyleRGB.Checked)
             {
                 Clipboard.SetDataObject(
-                    $"rgb({this.TBX_StyleRGB_R.Text},{this.TBX_StyleRGB_G.Text},{this.TBX_StyleRGB_B.Text})", true);
+                    $"rgb({TBX_StyleRGB_R.Text},{TBX_StyleRGB_G.Text},{TBX_StyleRGB_B.Text})", true);
                 return;
             }
         }
 
         private void TMR_Refresh_Tick(object sender, EventArgs e)
         {
-            int msX = MousePosition.X;
-            int msY = MousePosition.Y;
-            this.LBL_x.Text = msX.ToString();
-            this.LBL_y.Text = msY.ToString();
+            Point ms = MousePosition;
+            LBL_x.Text = ms.X.ToString();
+            LBL_y.Text = ms.Y.ToString();
 
-            if (ColorHelper.PixelColor(msX, msY, out r, out g, out b) == true
-                && this.CKB_Lock.Checked == false)
+            if (ColorHelper.PixelColor(ms, out _color))
             {
-                this.BTN_SelectColor.BackColor = Color.FromArgb(r, g, b);
+                BTN_SelectColor.BackColor = _color;
             }
         }
 
         private void BTN_SelectColor_BackColorChanged(object sender, EventArgs e)
         {
-            this.TBX_StyleHtml.Text = $@"{r:X2}{g:X2}{b:X2}";
-            this.TBX_StyleRGB_R.Text = r.ToString();
-            this.TBX_StyleRGB_G.Text = g.ToString();
-            this.TBX_StyleRGB_B.Text = b.ToString();
+            TBX_StyleHtml.Text = $@"{_color.R:X2}{_color.G:X2}{_color.B:X2}";
+            TBX_StyleRGB_R.Text = _color.R.ToString();
+            TBX_StyleRGB_G.Text = _color.G.ToString();
+            TBX_StyleRGB_B.Text = _color.B.ToString();
         }
 
         private void BTN_SelectColor_Click(object sender, EventArgs e)
         {
-            this.CKB_Lock.Checked = true;
-            this.CDG_1.Color = this.BTN_SelectColor.BackColor;
-            if (this.CDG_1.ShowDialog() == DialogResult.OK)
+            CKB_Lock.Checked = true;
+            CDG_1.Color = BTN_SelectColor.BackColor;
+            if (CDG_1.ShowDialog() == DialogResult.OK)
             {
-                r = this.CDG_1.Color.R;
-                g = this.CDG_1.Color.G;
-                b = this.CDG_1.Color.B;
-                this.BTN_SelectColor.BackColor = this.CDG_1.Color;
+                _color = CDG_1.Color;
+                BTN_SelectColor.BackColor = CDG_1.Color;
             }
+        }
+
+        private void CKB_Lock_CheckedChanged(object sender, EventArgs e)
+        {
+            //TMR_Refresh.Enabled = !(sender as CheckBox).Checked;
+            TMR_Refresh.Enabled = !CKB_Lock.Checked;
+        }
+
+        private void CKB_Top_CheckedChanged(object sender, EventArgs e)
+        {
+            TopMost = CKB_Top.Checked;
         }
     }
 }

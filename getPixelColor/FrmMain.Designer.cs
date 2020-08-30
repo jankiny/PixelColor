@@ -65,7 +65,7 @@
             this.CKB_Top.TabIndex = 0;
             this.CKB_Top.Text = "置顶";
             this.CKB_Top.UseVisualStyleBackColor = true;
-            this.CKB_Top.Click += new System.EventHandler(this.CKB_Top_Click);
+            this.CKB_Top.CheckedChanged += new System.EventHandler(this.CKB_Top_CheckedChanged);
             // 
             // TMR_Refresh
             // 
@@ -216,6 +216,7 @@
             this.CKB_Lock.TabIndex = 8;
             this.CKB_Lock.Text = "锁色(&d)";
             this.CKB_Lock.UseVisualStyleBackColor = true;
+            this.CKB_Lock.CheckedChanged += new System.EventHandler(this.CKB_Lock_CheckedChanged);
             // 
             // LBL_XPosition
             // 
