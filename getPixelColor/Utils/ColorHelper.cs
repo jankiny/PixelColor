@@ -38,9 +38,9 @@ namespace getPixelColor.Utils
             int c = GetPixel(hdc, point);//取指定点颜色 
             ReleaseDC(IntPtr.Zero, hdc);
             color = Color.FromArgb(
-                c & 0xFF,                   //转换R 
-                (c & 0xFF00) / 256,       //转换G 
-                (c & 0xFF0000) / 65536);   //转换B 
+                red: c & 0xFF,                 //转换R 
+                green: (c & 0xFF00) / 256,       //转换G 
+                blue: (c & 0xFF0000) / 65536);  //转换B 
             return true;
         }
 
