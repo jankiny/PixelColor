@@ -43,17 +43,15 @@ namespace getPixelColor.Utils
         /// <param name="key">热键</param>
         public static void RegHotKey(IntPtr hwnd, int hotKeyId, KeyModifiers keyModifiers, Keys key)
         {
-            if (!RegisterHotKey(hwnd, hotKeyId, keyModifiers, key))
+            if (RegisterHotKey(hwnd, hotKeyId, keyModifiers, key)) return;
+            int errorCode = Marshal.GetLastWin32Error();
+            if (errorCode == 1409)
             {
-                int errorCode = Marshal.GetLastWin32Error();
-                if (errorCode == 1409)
-                {
-                    MessageBox.Show("热键被占用 ！");
-                }
-                else
-                {
-                    MessageBox.Show("注册热键失败！错误代码：" + errorCode);
-                }
+                MessageBox.Show("热键被占用 ！");
+            }
+            else
+            {
+                MessageBox.Show("注册热键失败！错误代码：" + errorCode);
             }
         }
         /// <summary>
@@ -68,8 +66,8 @@ namespace getPixelColor.Utils
         }
 
         public const int WM_HOTKEY = 0x312; //窗口消息-热键
-        public const int WM_CREATE = 0x1; //窗口消息-创建
-        public const int WM_DESTROY = 0x2; //窗口消息-销毁
+        //public const int WM_CREATE = 0x1; //窗口消息-创建
+        //public const int WM_DESTROY = 0x2; //窗口消息-销毁
         public const int Space = 0x3572; //热键ID
     }
 }

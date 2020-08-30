@@ -32,8 +32,6 @@ namespace getPixelColor
                         case HotkeyHelper.Space: //热键ID
                             CKB_Lock.Checked = !CKB_Lock.Checked;
                             break;
-                        default:
-                            break;
                     }
                     break;
                 default:
@@ -45,13 +43,11 @@ namespace getPixelColor
             if (TBN_StyleHtml.Checked)
             {
                 Clipboard.SetDataObject($"#{TBX_StyleHtml.Text}", true);
-                return;
             }
             else if (RBN_StyleRGB.Checked)
             {
                 Clipboard.SetDataObject(
                     $"rgb({TBX_StyleRGB_R.Text},{TBX_StyleRGB_G.Text},{TBX_StyleRGB_B.Text})", true);
-                return;
             }
         }
 
