@@ -18,8 +18,28 @@ namespace getPixelColor
             CKB_Top.Checked = true;
             LBL_Version.Text = $@"{Global.By}  {Global.Version}";
             TMR_Refresh.Enabled = true;
+            HotkeyHelper.RegHotKey(Handle, HotkeyHelper.Space, HotkeyHelper.KeyModifiers.Ctrl, Keys.D);
         }
 
+        protected override void WndProc(ref Message m)
+        {
+            base.WndProc(ref m);
+            switch (m.Msg)
+            {
+                case HotkeyHelper.WM_HOTKEY: //窗口消息-热键ID
+                    switch (m.WParam.ToInt32())
+                    {
+                        case HotkeyHelper.Space: //热键ID
+                            CKB_Lock.Checked = !CKB_Lock.Checked;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
         private void BTN_Copy_Click(object sender, EventArgs e)
         {
             if (TBN_StyleHtml.Checked)

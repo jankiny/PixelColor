@@ -212,9 +212,9 @@
             this.CKB_Lock.AutoSize = true;
             this.CKB_Lock.Location = new System.Drawing.Point(142, 12);
             this.CKB_Lock.Name = "CKB_Lock";
-            this.CKB_Lock.Size = new System.Drawing.Size(66, 16);
+            this.CKB_Lock.Size = new System.Drawing.Size(96, 16);
             this.CKB_Lock.TabIndex = 8;
-            this.CKB_Lock.Text = "锁色(&d)";
+            this.CKB_Lock.Text = "锁色(Ctrl+D)";
             this.CKB_Lock.UseVisualStyleBackColor = true;
             this.CKB_Lock.CheckedChanged += new System.EventHandler(this.CKB_Lock_CheckedChanged);
             // 
