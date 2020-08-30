@@ -7,9 +7,9 @@
 
 ![image-20200830202100560](README.assets/image-20200830202100560.png)
 
--   在全局进行[拾色](###2.1 拾色功能（锁色）)，并通过全局热键`Ctrl+D`[锁色](###2.1 拾色功能（锁色）)（可能会出现热键冲突；之后可能会加入<u>"设置"</u>可自定义热键）
--   锁定颜色后，可[复制](###2.2 复制颜色)`HTML颜色代码`或`RGB代码`
--   [调色](###2.3 调色)功能，调色完成后也可复制`HTML颜色代码`或`RGB代码`
+-   在全局进行[拾色](https://github.com/jankiny/PixelColor#21-%E6%8B%BE%E8%89%B2%E5%8A%9F%E8%83%BD%E9%94%81%E8%89%B2)，并通过全局热键`Ctrl+D`[锁色](https://github.com/jankiny/PixelColor#21-%E6%8B%BE%E8%89%B2%E5%8A%9F%E8%83%BD%E9%94%81%E8%89%B2)（可能会出现热键冲突；之后可能会加入<u>"设置"</u>可自定义热键）
+-   锁定颜色后，可[复制](https://github.com/jankiny/PixelColor#22-%E5%A4%8D%E5%88%B6%E9%A2%9C%E8%89%B2)`HTML颜色代码`或`RGB代码`
+-   [调色](https://github.com/jankiny/PixelColor#23-%E8%B0%83%E8%89%B2)功能，调色完成后也可复制`HTML颜色代码`或`RGB代码`
 
 ## 2 详细说明
 
@@ -21,7 +21,7 @@
 
 锁色后可以选择`html样式`或`rgb样式`，之后点<u>复制</u>按钮，会复制到剪切板。
 
->   ![image-20200830204814792](README.assets/image-20200830204814792.png)
+![image-20200830204814792](README.assets/image-20200830204814792.png)
 >   #795AA5
 >   rgb(121,90,165)
 
