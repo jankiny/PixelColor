@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace getPixelColor
 {
-    public partial class Frm_Main : Form
+    public partial class FrmMain : Form
     {
 
         int r, g, b;
-        public Frm_Main()
+        public FrmMain()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            TMR_1.Enabled = true;
+            TMR_Refresh.Enabled = true;
         }
 
         private void CKB_Top_Click(object sender, EventArgs e)
@@ -34,25 +34,25 @@ namespace getPixelColor
         {
             if (TBN_StyleHtml.Checked)
             {
-                Clipboard.SetDataObject(string.Format("#{0}", this.TBX_StyleHtml.Text), true);
+                Clipboard.SetDataObject($"#{this.TBX_StyleHtml.Text}", true);
                 return;
             }
             else if (RBN_StyleRGB.Checked)
             {
-                Clipboard.SetDataObject(string.Format("rgb({0},{1},{2})", 
-                    this.TBX_StyleRGB_R.Text, this.TBX_StyleRGB_G.Text, this.TBX_StyleRGB_B.Text), true);
+                Clipboard.SetDataObject(
+                    $"rgb({this.TBX_StyleRGB_R.Text},{this.TBX_StyleRGB_G.Text},{this.TBX_StyleRGB_B.Text})", true);
                 return;
             }
         }
 
-        private void TMR_1_Tick(object sender, EventArgs e)
+        private void TMR_Refresh_Tick(object sender, EventArgs e)
         {
-            int ms_x = MousePosition.X;
-            int ms_y = MousePosition.Y;
-            this.lbl_x.Text = ms_x.ToString();
-            this.lbl_y.Text = ms_y.ToString();
+            int msX = MousePosition.X;
+            int msY = MousePosition.Y;
+            this.LBL_x.Text = msX.ToString();
+            this.LBL_y.Text = msY.ToString();
 
-            if (ColorHelper.PixelColor(ms_x, ms_y, out r, out g, out b) == true
+            if (ColorHelper.PixelColor(msX, msY, out r, out g, out b) == true
                 && this.CKB_Lock.Checked == false)
             {
                 this.BTN_SelectColor.BackColor = Color.FromArgb(r, g, b);
@@ -61,7 +61,7 @@ namespace getPixelColor
 
         private void BTN_SelectColor_BackColorChanged(object sender, EventArgs e)
         {
-            this.TBX_StyleHtml.Text = string.Format("{0:X2}{1:X2}{2:X2}", r, g, b);
+            this.TBX_StyleHtml.Text = $@"{r:X2}{g:X2}{b:X2}";
             this.TBX_StyleRGB_R.Text = r.ToString();
             this.TBX_StyleRGB_G.Text = g.ToString();
             this.TBX_StyleRGB_B.Text = b.ToString();
@@ -70,13 +70,13 @@ namespace getPixelColor
         private void BTN_SelectColor_Click(object sender, EventArgs e)
         {
             this.CKB_Lock.Checked = true;
-            this.CRDG_1.Color = this.BTN_SelectColor.BackColor;
-            if (this.CRDG_1.ShowDialog() == DialogResult.OK)
+            this.CDG_1.Color = this.BTN_SelectColor.BackColor;
+            if (this.CDG_1.ShowDialog() == DialogResult.OK)
             {
-                r = this.CRDG_1.Color.R;
-                g = this.CRDG_1.Color.G;
-                b = this.CRDG_1.Color.B;
-                this.BTN_SelectColor.BackColor = this.CRDG_1.Color;
+                r = this.CDG_1.Color.R;
+                g = this.CDG_1.Color.G;
+                b = this.CDG_1.Color.B;
+                this.BTN_SelectColor.BackColor = this.CDG_1.Color;
             }
         }
     }

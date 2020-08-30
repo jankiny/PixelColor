@@ -1,6 +1,6 @@
 ﻿namespace getPixelColor
 {
-    partial class Frm_Main
+    partial class FrmMain
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.CKB_Top = new System.Windows.Forms.CheckBox();
-            this.TMR_1 = new System.Windows.Forms.Timer(this.components);
+            this.TMR_Refresh = new System.Windows.Forms.Timer(this.components);
             this.TBN_StyleHtml = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,10 +49,10 @@
             this.CKB_Lock = new System.Windows.Forms.CheckBox();
             this.LBL_XPosition = new System.Windows.Forms.Label();
             this.LBL_YPosition = new System.Windows.Forms.Label();
-            this.lbl_x = new System.Windows.Forms.Label();
-            this.lbl_y = new System.Windows.Forms.Label();
+            this.LBL_x = new System.Windows.Forms.Label();
+            this.LBL_y = new System.Windows.Forms.Label();
             this.BTN_SelectColor = new System.Windows.Forms.Button();
-            this.CRDG_1 = new System.Windows.Forms.ColorDialog();
+            this.CDG_1 = new System.Windows.Forms.ColorDialog();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,9 +67,9 @@
             this.CKB_Top.UseVisualStyleBackColor = true;
             this.CKB_Top.Click += new System.EventHandler(this.CKB_Top_Click);
             // 
-            // TMR_1
+            // TMR_Refresh
             // 
-            this.TMR_1.Tick += new System.EventHandler(this.TMR_1_Tick);
+            this.TMR_Refresh.Tick += new System.EventHandler(this.TMR_Refresh_Tick);
             // 
             // TBN_StyleHtml
             // 
@@ -235,23 +235,23 @@
             this.LBL_YPosition.TabIndex = 9;
             this.LBL_YPosition.Text = "yPos：";
             // 
-            // lbl_x
+            // LBL_x
             // 
-            this.lbl_x.AutoSize = true;
-            this.lbl_x.Location = new System.Drawing.Point(111, 82);
-            this.lbl_x.Name = "lbl_x";
-            this.lbl_x.Size = new System.Drawing.Size(11, 12);
-            this.lbl_x.TabIndex = 9;
-            this.lbl_x.Text = "x";
+            this.LBL_x.AutoSize = true;
+            this.LBL_x.Location = new System.Drawing.Point(111, 82);
+            this.LBL_x.Name = "LBL_x";
+            this.LBL_x.Size = new System.Drawing.Size(11, 12);
+            this.LBL_x.TabIndex = 9;
+            this.LBL_x.Text = "x";
             // 
-            // lbl_y
+            // LBL_y
             // 
-            this.lbl_y.AutoSize = true;
-            this.lbl_y.Location = new System.Drawing.Point(175, 82);
-            this.lbl_y.Name = "lbl_y";
-            this.lbl_y.Size = new System.Drawing.Size(11, 12);
-            this.lbl_y.TabIndex = 9;
-            this.lbl_y.Text = "y";
+            this.LBL_y.AutoSize = true;
+            this.LBL_y.Location = new System.Drawing.Point(175, 82);
+            this.LBL_y.Name = "LBL_y";
+            this.LBL_y.Size = new System.Drawing.Size(11, 12);
+            this.LBL_y.TabIndex = 9;
+            this.LBL_y.Text = "y";
             // 
             // BTN_SelectColor
             // 
@@ -264,18 +264,18 @@
             this.BTN_SelectColor.BackColorChanged += new System.EventHandler(this.BTN_SelectColor_BackColorChanged);
             this.BTN_SelectColor.Click += new System.EventHandler(this.BTN_SelectColor_Click);
             // 
-            // CRDG_1
+            // CDG_1
             // 
-            this.CRDG_1.FullOpen = true;
+            this.CDG_1.FullOpen = true;
             // 
-            // Frm_Main
+            // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(239, 113);
             this.Controls.Add(this.BTN_SelectColor);
-            this.Controls.Add(this.lbl_y);
-            this.Controls.Add(this.lbl_x);
+            this.Controls.Add(this.LBL_y);
+            this.Controls.Add(this.LBL_x);
             this.Controls.Add(this.LBL_YPosition);
             this.Controls.Add(this.LBL_XPosition);
             this.Controls.Add(this.CKB_Lock);
@@ -284,7 +284,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CKB_Top);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Frm_Main";
+            this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GPC";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -298,7 +298,7 @@
         #endregion
 
         private System.Windows.Forms.CheckBox CKB_Top;
-        private System.Windows.Forms.Timer TMR_1;
+        private System.Windows.Forms.Timer TMR_Refresh;
         private System.Windows.Forms.RadioButton TBN_StyleHtml;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton RBN_StyleRGB;
@@ -307,10 +307,10 @@
         private System.Windows.Forms.CheckBox CKB_Lock;
         private System.Windows.Forms.Label LBL_XPosition;
         private System.Windows.Forms.Label LBL_YPosition;
-        private System.Windows.Forms.Label lbl_x;
-        private System.Windows.Forms.Label lbl_y;
+        private System.Windows.Forms.Label LBL_x;
+        private System.Windows.Forms.Label LBL_y;
         private System.Windows.Forms.Button BTN_SelectColor;
-        private System.Windows.Forms.ColorDialog CRDG_1;
+        private System.Windows.Forms.ColorDialog CDG_1;
         private System.Windows.Forms.TextBox TBX_StyleRGB_R;
         private System.Windows.Forms.TextBox TBX_StyleHtml;
         private System.Windows.Forms.Label label1;
